@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    int score = 0;
+    int score = 0, scoreB = 0;
 
     public void submitScore(View view)
     {
@@ -48,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
         display(score);
     }
 
+    public void resetScore(View view)
+    {
+        //int quantity = 2;
+
+        score = 0;
+        display(score);
+    }
+
     public void incrementTwoPoints(View view)
     {
         //int quantity = 2;
@@ -68,7 +76,58 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    ///////////////////////////////////////////////////////////////////////////////////
 
+    private void displayB(int number)
+    {
+        TextView scoreTextViewB = (TextView) findViewById(R.id.score_text_viewB);
+        scoreTextViewB.setText("" + number);
+    }
+
+    private void displayScoreB()
+    {
+        int number = 0;
+        number = scoreB;
+        TextView scoreTextViewB = (TextView) findViewById(R.id.score_text_viewB);
+        scoreTextViewB.setText(NumberFormat.getCurrencyInstance().format(number));
+
+    }
+
+    public void incrementOnePointB(View view)
+    {
+        //int quantity = 2;
+
+        scoreB = scoreB + 1;
+        displayB(scoreB);
+    }
+
+    public void incrementTwoPointsB(View view)
+    {
+        //int quantity = 2;
+
+        scoreB = scoreB + 2;
+        displayB(scoreB);
+
+
+    }
+
+    public void incrementThreePointsB(View view)
+    {
+        //int quantity = 2;
+
+        scoreB = scoreB + 3;
+        displayB(scoreB);
+
+
+    }
+
+    public void resetScoreB(View view)
+    {
+        //int quantity = 2;
+
+        scoreB = 0;
+        displayB(scoreB);
+    }
 
 
 }
